@@ -1,0 +1,148 @@
+/**
+ * @name Chat Bubbles Only
+ * @author Grok
+ * @version 2.7.0
+ * @description Bubbles with custom color #8c7254
+*/
+
+/* Darker chat so bubbles pop */
+[class*="chatContent_"],
+[class*="chat_"] {
+  background: var(--background-tertiary) !important;
+}
+
+/* ============================================================
+   MESSAGE ROW
+   ============================================================ */
+[class*="messageListItem"] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: flex-start !important;
+  column-gap: 12px !important;
+  margin: 8px 16px !important;
+  padding: 0 !important;
+  background: transparent !important;
+}
+
+[class*="messageListItem"]:hover {
+  background: transparent !important;
+}
+
+[class*="messageListItem"][class*="groupStart"] {
+  margin-top: 14px !important;
+}
+
+[class*="messageListItem"]:not([class*="groupStart"]) {
+  margin-top: 4px !important;
+}
+
+/* ============================================================
+   AVATAR
+   ============================================================ */
+[class*="messageListItem"] [class*="avatar"] {
+  order: 1 !important;
+  flex: 0 0 40px !important;
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  margin-top: 0 !important;
+}
+
+[class*="messageListItem"] [class*="avatar"] img {
+  width: 100% !important;
+  height: 100% !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+}
+
+/* ============================================================
+   CUSTOM BUBBLE COLOR
+   ============================================================ */
+:root {
+  --bubble-bg: #524231;
+  --bubble-bg-hover: #9a7f61;
+}
+
+/* ============================================================
+   SINGLE BUBBLE
+   ============================================================ */
+
+/* Whole contents area = the bubble */
+[class*="messageListItem"] [class*="contents"] {
+  order: 2 !important;
+  background: var(--bubble-bg) !important;
+  border-radius: 16px !important;
+  padding: 8px 14px !important;
+  max-width: min(620px, 75%) !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.25) !important;
+  transition: background 0.15s ease !important;
+}
+
+[class*="messageListItem"]:hover [class*="contents"] {
+  background: var(--bubble-bg-hover) !important;
+}
+
+/* Name + time */
+[class*="messageListItem"] [class*="header"] {
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 8px !important;
+  margin: 0 0 3px 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+[class*="messageListItem"] [class*="username"] {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  margin: 0 !important;
+  color: #f5e6d0 !important;
+}
+
+[class*="messageListItem"] [class*="timestamp"] {
+  font-size: 11px !important;
+  opacity: 0.75 !important;
+  margin: 0 !important;
+  color: #f5e6d0 !important;
+}
+
+/* Message text */
+[class*="messageListItem"] [class*="markup"] {
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  max-width: 100% !important;
+  display: block !important;
+  line-height: 1.45 !important;
+  color: #f5e6d0 !important;
+}
+
+/* Continuations */
+[class*="messageListItem"]:not([class*="groupStart"]) [class*="contents"] {
+  border-radius: 16px !important;
+}
+
+/* ============================================================
+   CODE / EMBEDS / REACTIONS
+   ============================================================ */
+[class*="messageListItem"] code,
+[class*="messageListItem"] pre {
+  border-radius: 8px !important;
+  background: color-mix(in srgb, #8c7254 35%, black 65%) !important;
+  color: #f5e6d0 !important;
+}
+
+[class*="messageListItem"] [class*="imageWrapper"],
+[class*="messageListItem"] [class*="embedWrapper"] {
+  border-radius: 10px !important;
+  margin-top: 6px !important;
+}
+
+[class*="messageListItem"] [class*="reactions"] {
+  margin-top: 6px !important;
+}
