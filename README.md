@@ -6,3 +6,4 @@ Theme for vincord
 
 download vincord
 navigate to the settings - themes - folder and just drop the two files in
+https://github.com/cam24242/Discord-theme---Chat-theme/blob/main/Preview.png?raw=true
